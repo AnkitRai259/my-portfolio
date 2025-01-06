@@ -5,277 +5,312 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ankit Rai Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for smooth animations */
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* To avoid navigation bar covering the section heading */
+        .section-header {
+            padding-top: 40px; /* Adjust as per your navbar height */
+        }
+
+        /* Custom icon styling */
+        .icon {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .icon:hover {
+            transform: scale(1.2);
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans">
+<body class="bg-gray-50 text-gray-900 font-sans leading-relaxed">
 
- <!-- Header Section -->
-<header class="bg-gray-800 text-white">
-    <div class="container mx-auto flex justify-between items-center py-4 px-4">
-        <!-- Logo or Name -->
-        <div class="text-xl font-bold">
-            <a href="#">Ankit Rai</a>
+    <!-- Navigation Header -->
+    <header class="bg-gray-800 text-white py-4 shadow-md w-full fixed top-0 left-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <a href="#hero" class="text-2xl font-semibold text-yellow-400 hover:text-yellow-300">Ankit Rai</a>
+            <nav>
+                <ul class="flex space-x-8">
+                    <li><a href="#about" class="hover:text-yellow-400">About</a></li>
+                    <li><a href="#skills" class="hover:text-yellow-400">Skills</a></li>
+                    <li><a href="#projects" class="hover:text-yellow-400">Projects</a></li>
+                    <li><a href="#certifications" class="hover:text-yellow-400">Certifications</a></li>
+                    <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <!-- Navigation Links (Desktop) -->
-        <nav class="hidden md:flex space-x-6">
-            <a href="#about" class="hover:text-blue-400">About</a>
-            <a href="#internship" class="hover:text-blue-400">Virtual Internships</a>
-            <a href="#skills" class="hover:text-blue-400">Skills</a>
-            <a href="#projects" class="hover:text-blue-400">Projects</a>
-            <a href="#certificates" class="hover:text-blue-400">Certificates</a>
-            <a href="#resume" class="hover:text-blue-400">Resume</a>
-            <a href="#contact" class="hover:text-blue-400">Contact</a>
-        </nav>
-
-        <!-- Mobile Menu Button -->
-        <button id="menu-toggle" class="md:hidden text-2xl">
-            ☰
-        </button>
-    </div>
-
-    <!-- Mobile Dropdown Menu -->
-    <nav id="mobile-menu" class="hidden bg-gray-700 md:hidden">
-        <a href="#about" class="block py-2 px-4 hover:bg-gray-600">About</a>
-        <a href="#internship" class="block py-2 px-4 hover:bg-gray-600">Virtual Internships</a>
-        <a href="#skills" class="block py-2 px-4 hover:bg-gray-600">Skills</a>
-        <a href="#projects" class="block py-2 px-4 hover:bg-gray-600">Projects</a>
-        <a href="#certificates" class="block py-2 px-4 hover:bg-gray-600">Certificates</a>
-        <a href="#resume" class="block py-2 px-4 hover:bg-gray-600">Resume</a>
-        <a href="#contact" class="block py-2 px-4 hover:bg-gray-600">Contact</a>
-    </nav>
-</header>
-
-<script>
-    const menuToggle = document.getElementById("menu-toggle");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    menuToggle.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-    });
-</script>
-   
-
-    <!-- About Section -->
-    <section id="about" class="container mx-auto flex flex-col md:flex-row items-center text-center md:text-left py-10 px-4 space-y-6 md:space-y-0 md:space-x-6">
-    <!-- Profile Photo -->
-    <div class="flex-shrink-0">
-        <img src="images/photograph.jpg" alt="Profile Photo" class="rounded-full w-56 h-56 md:w-64 md:h-64 shadow-lg object-cover">
-    </div>
-
-    <!-- About Content -->
-    <div>
-        <p class="text-xl font-semibold mb-2">Hello,It's Me</p>
-                <h1 class="text-4xl font-bold mb-4">Ankit Rai</h1>
-        <p class="text-xl font-semibold mb-2">And I'm an Aspiring Data Analyst</p>
-        <p class="text-lg">Freshly armed with a Computer Science degree.I’m passionate about exploring data to uncover stories and solutions. Skilled in SQL, Excel, Power BI, and Python.I’m ready to embark on a data analytics journey and help businesses make smarter, data-driven decisions.</p>
-    </div>
-    </section>
-
-
-   <!-- Education Section -->
-<section id="education" class="container mx-auto text-center py-10 px-4">
-    <h2 class="text-3xl font-bold mb-4">Education</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <!-- Education Tile 1 -->
-        <div class="bg-white rounded-lg shadow-lg p-6">
-            <h3 class="text-xl font-semibold mb-2">B.Sc. (Hons.) in Computer Science</h3>
-            <p class="text-gray-700 mb-1">Atma Ram Sanatan Dharma College, New Delhi</p>
-            <p class="text-gray-700 mb-1">(University of Delhi)</p>
-            <p class="text-gray-500">November 2021 - June 2024</p>
-            <p class="text-gray-500">CGPA: 7.851</p>
+<!-- Hero Section -->
+<section id="hero" class="h-screen text-white py-24 fade-in relative flex items-center justify-center px-6 w-full pt-32">
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-8 w-full">
+        <!-- Profile Image -->
+        <div class="relative z-10 mb-4 sm:mb-0 sm:w-1/2">
+            <img src="images/photograph.jpg" alt="Ankit Rai" class="w-80 h-80 rounded-full mx-auto mb-4 shadow-lg">
         </div>
-        <!-- Education Tile 2 -->
-        <div class="bg-white rounded-lg shadow-lg p-6">
-            <h3 class="text-xl font-semibold mb-2">Higher Secondary Certificate</h3>
-            <p class="text-gray-700 mb-1">S.D. Memorial Sr. Sec. School, Gurugram, Haryana</p>
-            <p class="text-gray-500">April 2020 - July 2021</p>
-            <p class="text-gray-500">Marks: 96.5%</p>
-        </div>
-        <!-- Education Tile 3 -->
-        <div class="bg-white rounded-lg shadow-lg p-6">
-            <h3 class="text-xl font-semibold mb-2">Secondary School Certificate</h3>
-            <p class="text-gray-700 mb-1">S.D. Memorial Sr. Sec. School, Gurugram, Haryana</p>
-            <p class="text-gray-500">April 2018 - May 2019</p>
-            <p class="text-gray-500">Marks: 95.6%</p>
-        </div>
-    </div>
-</section>
-
-<!-- Virtual Internship Section -->
-<section id="internship" class="container mx-auto py-10 px-4">
-    <h2 class="text-3xl font-bold text-center mb-6">Virtual Internship</h2>
-    
-    <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
-        <!-- Internship Details (Text) -->
-        <div class="w-full md:w-1/2">
-            <h3 class="text-xl font-semibold mb-4">Overview</h3>
-            <p class="text-gray-700 mb-4">
-                I have successfully Completed 60-day Virtual Internship with KultureHire! Throughout this enriching journey, I had the incredible opportunity to work on an End-to-End Unguided Project focused on understanding the career aspirations of Gen Z. Leveraging Descriptive and Prescriptive Analytics, I gained hands-on experience in project execution, problem-solving, and adaptability
-            </p>
-            <h4 class="text-lg font-semibold mb-3">Tasks Completed:</h4>
-            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                <li>Crafted Documentation on Problem statement and Stakeholder Identification.</li>
-                <li>Data cleaning and Standardization Excel.</li>
-                <li>Created Pivot Tables to uncover insights.</li>
-                <li>Optimized SQL queries for data extraction and reporting.</li>
-                <li>Developed an interactive Excel dashboard to analyze KPIs.</li>
-                <li>Created project completion reports and presentation.</li>
-            </ul>
-        </div>
-
-        <!-- Internship Image (Completion Letter) -->
-        <div class="w-full md:w-1/2">
-            <img src="images/internship.png" alt="Letter of Completion" class="rounded-lg shadow-lg w-full">
-        </div>
-    </div>
-</section>
-
-
-<!-- Skills Section -->
-<section id="skills" class="container mx-auto text-center py-10 px-4">
-    <h2 class="text-3xl font-bold mb-4">Skills</h2>
-    <div class="flex flex-wrap justify-center gap-4">
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">Data Analytics</span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">Data Visualization</span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">Data Cleaning</span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">Exploratory Data Analysis (EDA)</span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">SQL (MySQL,PostgreSQL)</span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">Oracle PL/SQL</span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">Power BI</span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">DAX</span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">Power Query</span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">Advanced Excel</span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">Pivot Table </Table></span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">Dashboard</span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">Python</span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">Pandas</span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">Numpy</span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">Matplotlib</span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">Seaborn</span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">Jupyter Notebook</span>
-        <span class="bg-blue-100 text-blue-700 font-semibold py-2 px-4 rounded-full">Visual Studio Code</span>
-    </div>
-</section>
-
-
-
-<!-- Projects Section -->
-    <section id="projects" class="container mx-auto text-center py-10 px-4">
-        <h2 class="text-3xl font-bold mb-4">Projects</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <div class="bg-white rounded shadow p-4">
-                <img src="images/Employee Attrition Dashboard 1.png" alt="Employee Attrition Dashboard" class="rounded mb-2">
-                <h3 class="font-semibold text-xl">Employee Attrition Dashboard</h3>
-                <p>This project involves creating a dashboard to analyze employee attrition, highlighting insights like attrition rate (16.1%), demographic trends, job roles, tenure, salary, and education. It includes interactive features like a department slicer to filter data. The goal is to help organizations understand attrition factors and improve retention through data-driven decisions.</p>
-                <a href="https://github.com/AnkitRai259/Employee_Attrition_Dashboard" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
-            </div>
-            <div class="bg-white rounded shadow p-4">
-                <img src="images/Hospitality Dashboard1.png" alt="Hospitality Domain Dashboard" class="rounded mb-2">
-                <h3 class="font-semibold text-xl">Hospitality Domain Dashboard</h3>
-                <p>Crafted an interactive Power BI dashboard using a star schema with five tables to analyze metrics like occupancy rates, RevPAR, and booking trends. I created custom DAX measures and developed visualizations such as bar charts, line graphs, and heatmaps to turn raw data into actionable insights.</p>
-                <a href="https://github.com/AnkitRai259/Hospitality-Domain-Dashboard" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
-            </div>
-            <div class="bg-white rounded shadow p-4">
-                <img src="images/dashboard1.png" alt="Sales Insight: Uncovering trends and patterns" class="rounded mb-2">
-                <h3 class="font-semibold text-xl">Sales Insight: Uncovering trends and patterns</h3>
-                <p>Developed a comprehensive data analysis solution for company sales, leveraging SQL for data cleaning and PostgreSQL for structured management. Designed an interactive dashboard in Power BI to present actionable insights, including customer trends, regional performance & revenue analysis.</p>
-                <a href="https://github.com/AnkitRai259/Sales_Insight_Dashboard" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
-            </div>
-            <div class="bg-white rounded shadow p-4">
-                <img src="images/Diwali Sales Dataset Analysis.png" alt="Diwali Sales Analysis" class="rounded mb-2">
-                <h3 class="font-semibold text-xl">Diwali Sales Data Analysis Using Python</h3>
-                <p>Explored the festive pulse of Diwali sales using Python, crafting a data-driven narrative of customer behavior, product choices, and spending patterns for smarter marketing decisions.</p>
-                <a href="https://github.com/AnkitRai259/Diwali-Sales-Analysis-Using-Python" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
-            </div>
-            <div class="bg-white rounded shadow p-4">
-                <img src="images/Weather Dataset Analysis.png" alt="Weather Dataset Analysis" class="rounded mb-2">
-                <h3 class="font-semibold text-xl">Weather Dataset Analysis Using Python</h3>
-                <p>Analyzed weather data using Python to uncover trends, correlations, and extreme weather events. Utilized EDA, visualizations, and statistical analysis to reveal insights into temperature, humidity, and wind patterns over time.</p>
-                <a href="https://github.com/AnkitRai259/Weather-Dataset-Analysis-Using-Python" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
-            </div>
-            <div class="bg-white rounded shadow p-4">
-                <img src="images/MovieLens Dataset Analysis.png" alt="MovieLens Dataset Analysis" class="rounded mb-2">
-                <h3 class="font-semibold text-xl">MovieLens Dataset Analysis Using SQL</h3>
-                <p>Leveraged the MovieLens dataset with SQL to analyze 32 million ratings and 2 million tags, extracting insights on movie popularity, average ratings, and tag trends through advanced queries and analysis.</p>
-                <a href="https://github.com/AnkitRai259/MovieLens-Dataset-Analysis-SQL" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
-            </div>
-            <div class="bg-white rounded shadow p-4">
-                <img src="images/Call Center Dashboard.png" alt="JP-Morgan-Chase-Co-Excel-Skills-Job-Simulation " class="rounded mb-2">
-                <h3 class="font-semibold text-xl">Pwc Switzerland Power BI  </h3>
-                <p>Crafted impactful Power BI dashboards for PwC Switzerland, from visualizing business KPIs in Task 2 to analyzing customer retention trends in Task 3, and promoting diversity & inclusion in Task 4.</p>
-                <a href="https://github.com/AnkitRai259/PwC-Switzerland-Power-BI-Job-Simulation-" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
-            </div>
-            <div class="bg-white rounded shadow p-4">
-                <img src="images/Task 4 Excel Dashboard.png" alt="JP-Morgan-Chase-Co-Excel-Skills-Job-Simulation " class="rounded mb-2">
-                <h3 class="font-semibold text-xl">Task 4:JPMorgan Chase & Co. Excel Skills </h3>
-                <p>Developed a dynamic sales data dashboard using Excel, showcasing key performance metrics and trends to empower data-driven decisions, as part of the J.P. Morgan Chase & Co. Excel Skills Task 4.</p>
-                <a href="https://github.com/AnkitRai259/JP-Morgan-Chase-Co-Excel-Skills-Job-Simulation" target="_blank" class="text-blue-500 hover:underline">View on GitHub</a>
-            </div>
+        <!-- Text Section -->
+        <div class="relative z-10 sm:w-1/2 text-left sm:text-left">
+            <p class="text-xl font-semibold mb-4 text-gray-600">Hello!, I'm</p>
+            <h1 class="text-5xl font-extrabold mb-4 text-gray-800">Ankit Rai</h1>
+            <p class="text-xl font-semibold mb-2 text-gray-600">A Data Enthusiast</p>
+            <p class="text-xl font-semibold mb-2 text-gray-600">5★ in SQL on HackerRank</p>
+            <p class="text-xl  mb-2 text-gray-600">Passionate About Analytics and Continuous Learning</p>
            
+            <div class="flex justify-center sm:justify-start gap-10 mt-6">
+                <!-- LinkedIn Icon -->
+                <a href="https://www.linkedin.com/in/ankitrai259" target="_blank">
+                    <img src="images/linkedin.png" alt="LinkedIn" class="icon w-10 h-10">
+                </a>
+                <!-- Email Icon -->
+                <a href="mailto:ankittrai0410@gmail.com">
+                    <img src="images/email.png" alt="Email" class="icon w-10 h-10">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- About Me Section -->
+    <section id="about" class="w-full py-12 px-6 fade-in section-header">
+        <h2 class="text-3xl font-extrabold text-center mb-6 text-gray-800">About Me</h2>
+
+        
+        <!-- About Text Section -->
+        <div class="flex justify-center text-center mb-12">
+            <div class="w-full sm:w-2/3">            
+                <p class="text-xl text-gray-700">An enthusiastic aspiring analyst, passionate about uncovering insights through data and dedicated to continuous learning and growth to shape a thriving career in analytics</p>
+            </div>
+        </div>
+
+        <!-- Education Section with Cards -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-extrabold text-center mb-6 text-gray-800">Education</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">B.Sc. (Hons.) in Computer Science</h3>
+                    <p class="text-gray-700 text-center mb-1">Atma Ram Sanatan Dharma College, New Delhi</p>
+                    <p class="text-gray-700 text-center mb-1">(University of Delhi)</p>
+                    <p class="text-gray-600 text-center">November 2021 - June 2024</p>
+                    <p class="text-gray-600 text-center">CGPA: 7.851</p>
+                </div>
+                <!-- Education Tile 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">Higher Secondary Certificate</h3>
+                    <p class="text-gray-700 text-center mb-1">S.D. Memorial Sr. Sec. School, Gurugram, Haryana</p>
+                    <p class="text-gray-600 text-center">April 2020 - July 2021</p>
+                    <p class="text-gray-600 text-center">Marks: 96.5%</p>
+                </div>
+                <!-- Education Tile 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-2">Secondary School Certificate</h3>
+                    <p class="text-gray-700 text-center mb-1">S.D. Memorial Sr. Sec. School, Gurugram, Haryana</p>
+                    <p class="text-gray-600 text-center">April 2018 - May 2019</p>
+                    <p class="text-gray-600 text-center">Marks: 95.6%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Section with One Centered Card -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-extrabold text-center mb-6 text-gray-800">Experience</h3>
+            <div class="flex justify-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg w-1/2">
+                    <h4 class="text-xl font-semibold text-center text-gray-800">Business Analyst Virtual Intern</h4>
+                    <p class="text-gray-700 text-center">KultureHire | Oct 2024 - Nov 2024</p>
+                    <p class="text-gray-600  text-center">Worked on data cleaning and standardization to ensure accuracy and consistency and Executed complex SQL queries to extract and analyze key business insights, supporting data-driven decision-making. Additionally, designed and developed dynamic dashboards and reports, effectively visualizing data trends to facilitate informed decision-making.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CV Download Button -->
+        <div class="text-center">
+            <a href="documents/Ankit Rai_Resume.pdf" download class="bg-yellow-400 text-black py-2 px-6 rounded-full text-xl font-semibold transition duration-300 hover:bg-yellow-500">Download CV</a>
         </div>
     </section>
 
+        <!-- Skills Section -->
+        <section id="skills" class="w-full py-12 px-6 fade-in section-header">
+            <h2 class="text-3xl font-extrabold text-center mb-6 text-gray-800">Skills</h2>
+            <div class="flex flex-wrap justify-center gap-8 w-full">
+                <span class="bg-gradient-to-r from-teal-400 to-teal-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition duration-300">Advanced Excel</span>
+                <span class="bg-gradient-to-r from-teal-400 to-teal-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition duration-300">SQL</span>
+                <span class="bg-gradient-to-r from-teal-400 to-teal-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition duration-300">Oracle PL/SQL</span>
+                <span class="bg-gradient-to-r from-teal-400 to-teal-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition duration-300">Power BI</span>
+                <span class="bg-gradient-to-r from-teal-400 to-teal-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition duration-300">Python</span>
+                <span class="bg-gradient-to-r from-teal-400 to-teal-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition duration-300">Pandas</span>
+                <span class="bg-gradient-to-r from-teal-400 to-teal-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition duration-300">Numpy</span>
+                <span class="bg-gradient-to-r from-teal-400 to-teal-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition duration-300">Matplotlib</span>
+                <span class="bg-gradient-to-r from-teal-400 to-teal-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition duration-300">DAX</span>
+                <span class="bg-gradient-to-r from-teal-400 to-teal-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition duration-300">Report Writing</span>
+                <span class="bg-gradient-to-r from-teal-400 to-teal-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition duration-300">PowerPoint</span>
+                <span class="bg-gradient-to-r from-teal-400 to-teal-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition duration-300">Problem Solving</span>
+                <span class="bg-gradient-to-r from-teal-400 to-teal-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition duration-300">Attention to detail</span>
+            
+            
+            </div>
+        </section>
 
-   <!-- Certificates Section -->
-   <section id="certificates" class="container mx-auto text-center py-10 px-4">
-    <h2 class="text-3xl font-bold mb-4">Certificates</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div class="bg-white rounded shadow p-4">
-            <img src="images/SQL (Intermediate).png" alt="SQL Certification" class="rounded mb-2">
-            <p>SQL (Intermediate) Certification on HackerRank</p>
-        </div>
-        <div class="bg-white rounded shadow p-4">
-            <img src="images\PwC Certificate.png" alt="Power BI Job Simulation" class="rounded mb-2">
-            <p>PwC Switzerland Power BI Job Simulation on Forage</p>
-        </div>
-        <div class="bg-white rounded shadow p-4">
-            <img src="images/TATA certificate.png" alt="Data Visualization Certificate" class="rounded mb-2">
-            <p>Tata Data Visualisation: Empowering Business with Effective Insights Job Simulation on Forage</p>
-        </div>
-        <div class="bg-white rounded shadow p-4">
-            <img src="images/PowerBI certificate.png" alt="PowerBI Certification" class="rounded mb-2">
-            <p>Power BI for Beginners on Simplilearn</p>
-        </div>
-        <div class="bg-white rounded shadow p-4">
-            <img src="images/JPMorganChase Excel Skill Certificate.png" alt="Excel Certification" class="rounded mb-2">
-            <p>JPMorgan Chase & Co. Excel Skills Job Simulation on Forage</p>
-        </div>
-        <div class="bg-white rounded shadow p-4">
-            <img src="images/Sql basic Certificate.png" alt="SQL Certification" class="rounded mb-2">
-            <p>SQL (Basic) Certification on HackerRank</p>
-        </div>
-        
-        
-    </div>
-</section>    
+    <!-- Projects Section -->
+    <section id="projects" class="w-full py-12 px-6 fade-in section-header">
+        <h2 class="text-3xl font-extrabold text-center mb-6 text-gray-800">Projects</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+            <div class="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300">
+                <img src="images/Genz.webp" alt="GenZ Career Aspirations" class="rounded mb-4 ">
+                <h3 class="font-bold text-xl text-gray-800 ">GenZ Career Aspirations</h3>
+                <p class="text-gray-700 font-semibold mb-4">Tools Used: Excel, SQL, PowerPoint</p>
+                <p class="text-gray-600 mb-4">Performed cleaning and standardization on the dataset of GenZ's career aspirations. Used SQL queries to extract insights and created Dashboards using excel and prepared presentation.</p>
+                <div class="flex space-x-4 justify-center">
+                    <a href="https://github.com/AnkitRai259/GenZ_Career_Aspirations" target="_blank" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+                        View on GitHub
+                    </a>
+                </div>
 
-<!-- Resume Section -->
-<section id="resume" class="container mx-auto text-center py-10 px-4">
-    <h2 class="text-3xl font-bold mb-4">Resume</h2>
-    <p class="mb-4">Click below to view or download my resume.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300">
+                <img src="images/Goodcabs.webp" alt="Goodcabs Insights 360" class="rounded mb-4 ">
+                <h3 class="font-bold text-xl text-gray-800 ">Goodcabs Insights 360</h3>
+                <p class="text-gray-700 font-semibold mb-4">Tools Used: SQL, PowerBI, PowerPoint</p>
+                <p class="text-gray-600 mb-4">Analyzed the Goodcabs dataset to predict current growth rate.Used SQL queries to answer business Questions and created PowerBI Dashboards.Additionally drafted Presentation of project. </p>
+                <div class="flex space-x-4 justify-center">
+                    <a href="https://github.com/AnkitRai259/Goodcabs_Insights_360" target="_blank" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+                        View on GitHub
+                    </a>
+                    <a href="https://app.powerbi.com/links/bUhuwYx91h?ctid=a9edca2b-3c0e-4fc7-a955-c4f451aed5cd&pbi_source=linkShare" target="_blank" class="bg-green-600 text-white font-semibold py-2 px-4 rounded hover:bg-green-700 transition duration-300">
+                        Live Dashboard
+                    </a>
+                </div>
+               
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300">
+                <img src="images/Hospitality .jpg" alt="Hospitality domain dashboard" class="rounded mb-4 ">
+                <h3 class="font-bold text-xl text-gray-800 ">Hospitality Domain Dashboard</h3>
+                <p class="text-gray-700 font-semibold mb-4">Tools Used: PowerBI</p>
+                <p class="text-gray-600 mb-4">Crafted an interactive Power BI dashboard using DAX measures and developed visualizations such as bar charts & line graphs to turn raw data into actionable insights</p>
+                <div class="flex space-x-4 justify-center">
+                    <a href="https://github.com/AnkitRai259/Hospitality-Domain-Dashboard" target="_blank" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+                        View on GitHub
+                    </a>
+                    <a href="https://app.powerbi.com/links/jgwK9IXo8f?ctid=a9edca2b-3c0e-4fc7-a955-c4f451aed5cd&pbi_source=linkShare" target="_blank" class="bg-green-600 text-white font-semibold py-2 px-4 rounded hover:bg-green-700 transition duration-300">
+                        Live Dashboard
+                    </a>
+                </div>
+                
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300">
+                <img src="images/Employee attrition.jpg" alt="Employee Attrition Dashboard" class="rounded mb-4 ">
+                <h3 class="font-bold text-xl text-gray-800 ">Employee Attrition Dashboard</h3>
+                <p class="text-gray-700 font-semibold mb-4">Tools Used: PowerBI</p>
+                <p class="text-gray-600 mb-4">Built an interactive Power BI dashboard to visualize and analyze employee attrition trends.</p>
+                <div class="flex space-x-4 justify-center">
+                    <a href="https://github.com/AnkitRai259/Employee_Attrition_Dashboard" target="_blank" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+                        View on GitHub
+                    </a>
+                    <a href="https://app.powerbi.com/links/TwKLk93q87?ctid=a9edca2b-3c0e-4fc7-a955-c4f451aed5cd&pbi_source=linkShare" target="_blank" class="bg-green-600 text-white font-semibold py-2 px-4 rounded hover:bg-green-700 transition duration-300">
+                        Live Dashboard
+                    </a>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300">
+                <img src="images/Sales dashboard.png" alt="Sales Insights Dashboard" class="rounded mb-4 ">
+                <h3 class="font-bold text-xl text-gray-800 ">Sales Insights Dashboard</h3>
+                <p class="text-gray-700 font-semibold mb-4">Tools Used: SQL, PowerBI</p>
+                <p class="text-gray-600 mb-4">Performed data cleaning using SQL and built an interactive dashboard to visualize & analyze Sales Trends.</p>
+                <div class="flex space-x-4 justify-center">
+                    <a href="https://github.com/AnkitRai259/Sales_Insight_Dashboard" target="_blank" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+                        View on GitHub
+                    </a>
+                    <a href="https://app.powerbi.com/links/_QOq9nb_lw?ctid=a9edca2b-3c0e-4fc7-a955-c4f451aed5cd&pbi_source=linkShare" target="_blank" class="bg-green-600 text-white font-semibold py-2 px-4 rounded hover:bg-green-700 transition duration-300">
+                        Live Dashboard
+                    </a>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300">
+                <img src="images/Movielens.webp" alt="Employee Attrition Dashboard" class="rounded mb-4 ">
+                <h3 class="font-bold text-xl text-gray-800 ">MovieLens Dataset Analysis</h3>
+                <p class="text-gray-700 font-semibold mb-4">Tools Used: SQL, PowerPoint</p>
+                <p class="text-gray-600 mb-4">Analyzed the MovieLens dataset to extracts insights and trends.</p>
+                <div class="flex space-x-4 justify-center">
+                    <a href="https://github.com/AnkitRai259/MovieLens-Dataset-Analysis-SQL" target="_blank" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300">
+                <img src="images/diwali.jpg" alt="Diwali Sales Analysis" class="rounded mb-4 ">
+                <h3 class="font-bold text-xl text-gray-800 ">Diwali Sales Analysis</h3>
+                <p class="text-gray-700 font-semibold mb-4">Tools Used: Python</p>
+                <p class="text-gray-600 mb-4">Analyzed Diwali Sales dataset using Python Libraries.</p>
+                <div class="flex space-x-4 justify-center">
+                    <a href="https://github.com/AnkitRai259/Diwali-Sales-Analysis-Using-Python" target="_blank" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+                        View on GitHub
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Button to visit GitHub for more projects -->
+        <div class="text-center mt-8">
+            <a href="https://github.com/AnkitRai259" target="_blank" class="bg-yellow-400 text-black py-2 px-6 rounded-full text-xl font-semibold transition duration-300 hover:bg-yellow-500">For More Projects Visit GitHub</a>
+        </div>
+    </section>
 
-    <!-- View Resume Button (opens in a new tab) -->
-    <a href="documents/CV_Ankit_Rai_Analytics.pdf" target="_blank" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 mb-4 inline-block">
-        View Resume
-    </a>
+    <!-- Certifications Section -->
+    <section id="certifications" class="w-full py-12 px-6 fade-in section-header">
+        <h2 class="text-3xl font-extrabold text-center mb-6 text-gray-800">Certifications</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+            <div class="bg-white rounded-lg shadow-lg p-2 text-center">
+                <img src="images/SQL (Intermediate).png" alt="SQL Certification" class="rounded mb-3 mx-auto">
+                <h3 class="font-semibold text-lg text-gray-800">SQL (Intermediate) Certification on HackerRank</h3>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-2 text-center">
+                <img src="images/PwC Certificate.png" alt="Power BI Job Simulation" class="rounded mb-3 mx-auto">
+                <h3 class="font-semibold text-lg text-gray-800">PwC Switzerland Power BI Job Simulation on Forage</h3>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-2 text-center">
+                <img src="images/TATA certificate.png" alt="Data Visualization Certificate" class="rounded mb-3 mx-auto">
+                <h3 class="font-semibold text-lg text-gray-800">Tata Data Visualisation: Empowering Business with Effective Insights Job Simulation on Forage</h3>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-2 text-center">
+                <img src="images/PowerBI certificate.png" alt="Power BI Certification" class="rounded mb-3 mx-auto">
+                <h3 class="font-semibold text-lg text-gray-800">Power BI for Beginners on Simplilearn</h3>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-2 text-center">
+                <img src="images/JPMorganChase Excel Skill Certificate.png" alt="Excel Certification" class="rounded mb-3 mx-auto">
+                <h3 class="font-semibold text-lg text-gray-800">JPMorgan Chase & Co. Excel Skills Job Simulation on Forage</h3>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-2 text-center">
+                <img src="images/Sql basic Certificate.png" alt="SQL Certification" class="rounded mb-3 mx-auto">
+                <h3 class="font-semibold text-lg text-gray-800">SQL (Basic) Certification on HackerRank</h3>
+            </div>
+        </div>
+    </section>
+    
 
-    <!-- Download Resume Button -->
-    <a href="documents/CV_Ankit_Rai_Analytics.pdf" download="CV_Ankit_Rai_Analytics" class="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 inline-block">
-        Download Resume
-    </a>
-</section>
+    
+
 
 <!-- Contact Section -->
-<section id="contact" class="container mx-auto text-center py-10 px-4">
-    <h2 class="text-3xl font-bold mb-4">Contact</h2>
-    <p class="mb-4">Feel free to reach out to me through the following platforms:</p>
+<section id="contact" class="w-full py-12 px-6  text-gray-800  text-center fade-in section-header">
+    <h2 class="text-3xl font-extrabold mb-6">Contact</h2>
+    <p class="mb-6">Feel free to reach out to me through the following platforms:</p>
 
     <!-- Contact Links -->
-    <div class="flex justify-center items-center space-x-6 flex-wrap">
+    <div class="flex justify-center items-center space-x-8 flex-wrap">
         <!-- Gmail Icon and Link -->
         <div class="flex items-center space-x-2 mb-4 sm:mb-0">
             <a href="mailto:ankittrai0410@gmail.com" class="flex items-center text-lg font-semibold text-blue-500 hover:text-blue-700">
-                <img src="images/gmail-email-logo-png.png" alt="Gmail" class="w-6 h-6 mr-2">
+                <img src="images/email.png" alt="Gmail" class="w-6 h-6 mr-2">
                 <span>ankittrai0410@gmail.com</span>
             </a>
         </div>
@@ -283,21 +318,19 @@
         <!-- LinkedIn Icon and Link -->
         <div class="flex items-center space-x-2 mb-4 sm:mb-0">
             <a href="https://www.linkedin.com/in/ankitrai259" target="_blank" class="flex items-center text-lg font-semibold text-blue-500 hover:text-blue-700">
-                <img src="images/linkedin-logo-linkedin-icon.webp" alt="LinkedIn" class="w-6 h-6 mr-2">
+                <img src="images/linkedin.png" alt="LinkedIn" class="w-6 h-6 mr-2">
                 <span>ankitrai259</span>
             </a>
         </div>
 
         <!-- GitHub Icon and Link -->
         <div class="flex items-center space-x-2 mb-4 sm:mb-0">
-            <a href="https://github.com/AnkitRai259" target="_blank" class="flex items-center text-lg font-semibold text-gray-700 hover:text-gray-900">
-                <img src="images/github_logo.png" alt="GitHub" class="w-6 h-6 mr-2">
+            <a href="https://github.com/AnkitRai259" target="_blank" class="flex items-center text-lg font-semibold text-blue-500 hover:text-blue-700">
+                <img src="images/github.png" alt="GitHub" class="w-6 h-6 mr-2">
                 <span>AnkitRai259</span>
             </a>
         </div>
     </div>
 </section>
-
-
 </body>
 </html>
